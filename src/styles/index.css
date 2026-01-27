@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-retro-surface: var(--surface);
+  --color-retro-border: var(--border);
+  --color-retro-primary: var(--primary);
+  --color-retro-text: var(--text);
+  
+  --shadow-retro: 4px 4px 0px var(--shadow-color);
+  --shadow-retro-sm: 2px 2px 0px var(--shadow-color);
+}
+
+@layer base {
+  :root {
+    --surface: #f0fdfa;
+    --border: #0d9488;
+    --primary: #5eead4;
+    --text: #134e4a;
+    --shadow-color: rgba(19, 78, 74, 0.2);
+    --scanline-opacity: 0.1;
+  }
+
+  html.dark {
+    --surface: #0d0d0d;
+    --border: #c8b69e;
+    --primary: #c8b69e;
+    --text: #e6dcc8;
+    --shadow-color: rgba(200, 182, 158, 0.2);
+    --scanline-opacity: 0.25;
+  }
+
+  body {
+    font-family: 'VT323', 'Courier Prime', monospace;
+    background-color: var(--surface);
+    color: var(--text);
+    image-rendering: pixelated;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+}
+
+@layer components {
+  .bg-scanlines {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5) 0px,
+      rgba(0, 0, 0, 0.5) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    pointer-events: none;
+    opacity: var(--scanline-opacity);
+    z-index: 9999; 
+  }
+
+  .crt-effect {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 100%), 
+                linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+    background-size: 100% 100%, 100% 2px, 3px 100%;
+    pointer-events: none;
+    z-index: 9998; 
+  }
+
+  .text-shadow-retro {
+    text-shadow: 2px 2px 0px var(--shadow-color);
+  }
+
+  .dark .text-glow-gold {
+    text-shadow: 0 0 8px rgba(230, 220, 200, 0.5);
+  }
+}
