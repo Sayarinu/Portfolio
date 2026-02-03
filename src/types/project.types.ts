@@ -9,5 +9,5 @@ export interface Project {
     demo?: string;
     repo?: string;
   };
-  imageCount?: number; // For the dummy slideshow
+  imageCount?: number;
 }

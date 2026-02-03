@@ -3,7 +3,7 @@ import { cn } from '../../utils/cn';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
-  
+
   return (
     <footer className={cn(
       'border-t-3 py-8 mt-auto',
@@ -18,24 +18,33 @@ export function Footer() {
           )}>
             © {currentYear} SAYARIN.XYZ
           </p>
-          
+
           <div className="flex gap-4 font-mono text-xs">
-            <a 
-              href="https://github.com/Sayarinu" 
-              target="_blank" 
+            <a
+              href="https://github.com/Sayarinu"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-retro-text/70 hover:text-retro-accent dark:text-gold-text/70 dark:hover:text-gold-accent transition-colors"
             >
               GITHUB
             </a>
             <span className="text-retro-text/30 dark:text-gold-text/30">|</span>
-            <a 
-              href="https://www.linkedin.com/in/carter-garcia-cg225/" 
-              target="_blank" 
+            <a
+              href="https://www.linkedin.com/in/carter-garcia-cg225/"
+              target="_blank"
               rel="noopener noreferrer"
               className="text-retro-text/70 hover:text-retro-accent dark:text-gold-text/70 dark:hover:text-gold-accent transition-colors"
             >
               LINKEDIN
+            </a>
+            <span className="text-retro-text/30 dark:text-gold-text/30">|</span>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-retro-text/70 hover:text-retro-accent dark:text-gold-text/70 dark:hover:text-gold-accent transition-colors"
+            >
+              RESUME
             </a>
           </div>
         </div>

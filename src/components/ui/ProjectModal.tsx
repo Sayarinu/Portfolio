@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { Project } from "../../types";
 import { Button } from "../ui/Button";
 import { cn } from "../../utils/cn";
+import { useLockBodyScroll } from "../../hooks/useLockBodyScroll";
 
 interface ProjectModalProps {
   project: Project | null;
@@ -14,16 +15,7 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const modalRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [isOpen]);
+  useLockBodyScroll(isOpen);
 
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
@@ -56,7 +48,6 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
           "scrollbar-retro",
         )}
       >
-        {/* Header */}
         <div className="sticky top-0 z-10 flex items-center justify-between p-4 border-b-2 bg-retro-surface/95 backdrop-blur border-retro-border">
           <div>
             <h2 className="text-xl font-retro sm:text-2xl text-retro-text dark:text-glow-gold">
@@ -110,7 +101,6 @@ export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
             </div>
           </div>
 
-          {/* Details */}
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             <div className="md:col-span-2 space-y-4">
               <h3 className="text-lg font-retro text-retro-text underline decoration-retro-primary decoration-2 underline-offset-4">
