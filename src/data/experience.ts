@@ -8,17 +8,18 @@ export const EXPERIENCE: Experience[] = [
     period: 'JUNE 2024 - PRESENT',
     type: 'FULL TIME',
     description: `Engineered a scalable microservices analytics platform using Java Spring Boot and React Typescript. 
-    Implemented serverless MCP and RAG powered AI orchestration systems to automate high-fidelity code reviews and unify project management data.`,
+    Implemented serverless MCP and RAG powered AI orchestration system to automate aspects of the SDLC and improve code quality.`,
     techStack: [
       'JAVA',
       'SPRING BOOT',
       'REACT',
       'TYPESCRIPT',
+      'AWS',
       'GRAPHQL',
       'POSTGRES',
       'MCP',
       'RAG',
-      'AWS',
+      'CHROME RUNTIME',
       'TERRAFORM',
       'GITHUB ACTIONS'
     ]
@@ -37,9 +38,10 @@ export const EXPERIENCE: Experience[] = [
       'PYTHON',
       'PRISMA',
       'POSTGRES',
-      'AWS LAMBDA',
+      'AWS',
       'GITHUB ACTIONS'
-    ]
+    ],
+    link: 'https://explore.joinkalo.com/'
   },
   {
     id: 'C02',

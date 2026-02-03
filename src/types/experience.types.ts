@@ -8,4 +8,5 @@ export interface Experience {
   type: ExperienceType;
   description: string;
   techStack: string[];
+  link?: string;
 }

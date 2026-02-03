@@ -1,5 +1,6 @@
 import { Container } from '../ui/Container';
 import { cn } from '../../utils/cn';
+import { Link } from '../ui/Link';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -20,32 +21,32 @@ export function Footer() {
           </p>
 
           <div className="flex gap-4 font-mono text-xs">
-            <a
+            <Link
               href="https://github.com/Sayarinu"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-retro-text/70 hover:text-retro-accent dark:text-gold-text/70 dark:hover:text-gold-accent transition-colors"
+              className="text-retro-text/70 dark:text-gold-text/70 no-underline hover:underline"
             >
               GITHUB
-            </a>
+            </Link>
             <span className="text-retro-text/30 dark:text-gold-text/30">|</span>
-            <a
+            <Link
               href="https://www.linkedin.com/in/carter-garcia-cg225/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-retro-text/70 hover:text-retro-accent dark:text-gold-text/70 dark:hover:text-gold-accent transition-colors"
+              className="text-retro-text/70 dark:text-gold-text/70 no-underline hover:underline"
             >
               LINKEDIN
-            </a>
+            </Link>
             <span className="text-retro-text/30 dark:text-gold-text/30">|</span>
-            <a
+            <Link
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-retro-text/70 hover:text-retro-accent dark:text-gold-text/70 dark:hover:text-gold-accent transition-colors"
+              className="text-retro-text/70 dark:text-gold-text/70 no-underline hover:underline"
             >
               RESUME
-            </a>
+            </Link>
           </div>
         </div>
       </Container>

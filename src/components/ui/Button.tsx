@@ -13,7 +13,7 @@ export function Button({
   target,
   rel,
 }: ButtonProps) {
-  const baseStyles = 'font-retro uppercase transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed border-2 inline-flex items-center';
+  const baseStyles = 'font-retro uppercase transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed border-2 inline-flex items-center cursor-pointer';
   
   const variantStyles = {
     primary: 'bg-retro-primary text-retro-surface border-retro-border hover:opacity-90 shadow-retro active:shadow-none active:translate-y-[1px]',
