@@ -6,7 +6,7 @@ interface NavActionsProps {
   className?: string;
 }
 
-export function NavActions({ className }: NavActionsProps) {
+export const NavActions = ({ className }: NavActionsProps) => {
   const scrollTo = useScrollTo();
 
   return (

@@ -11,7 +11,7 @@ interface ProjectModalProps {
   onClose: () => void;
 }
 
-export function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
+export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const modalRef = useRef<HTMLDivElement>(null);
 

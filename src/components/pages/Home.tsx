@@ -74,9 +74,9 @@ export function Home() {
               Outside of my primary work, I enjoy building video games and am
               currently launching my own independent studio:{" "}
               <Link
-                onClick={() => scrollTo("moonfall")}
+                onClick={() => scrollTo("nouvelle-lune")}
               >
-                Moonfall Studios
+                Nouvelle Lune Atelier
               </Link>
               .
             </p>
@@ -265,7 +265,7 @@ export function Home() {
         </Card>
       </Section>
 
-      <Section id="moonfall" className="pb-20" delay="0.4s">
+      <Section id="nouvelle-lune" className="pb-20" delay="0.4s">
         <div className="mb-8 flex items-center gap-4">
           <h2
             className={cn(
@@ -274,7 +274,7 @@ export function Home() {
               "text-shadow-retro dark:text-glow-gold",
             )}
           >
-            MOONFALL STUDIOS
+            NOUVELLE LUNE ATELIER
           </h2>
           <div className="flex-1 h-px bg-retro-border dark:bg-gold-border" />
           <span className="text-xs font-mono text-retro-text/50 dark:text-gold-text/50">

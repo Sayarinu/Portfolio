@@ -1,7 +1,7 @@
 import { ButtonProps } from '../../types';
 import { cn } from '../../utils/cn';
 
-export function Button({
+export const Button = ({
   children,
   className,
   variant = 'primary',
@@ -12,7 +12,7 @@ export function Button({
   href,
   target,
   rel,
-}: ButtonProps) {
+}: ButtonProps) => {
   const baseStyles = 'font-retro uppercase transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed border-2 inline-flex items-center cursor-pointer';
   
   const variantStyles = {

@@ -9,14 +9,14 @@ interface LinkProps {
   rel?: string;
 }
 
-export function Link({
+export const Link = ({
   children,
   href,
   onClick,
   className,
   target,
   rel,
-}: LinkProps) {
+}: LinkProps) => {
   const baseStyles = 'font-retro text-retro-accent dark:text-gold-accent underline underline-offset-4 hover:text-white cursor-pointer transition-colors';
 
   if (href) {

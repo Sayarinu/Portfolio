@@ -27,7 +27,7 @@ export function EffectsProvider({ children }: EffectsProviderProps) {
   );
 }
 
-export function useEffects(): EffectsContextType {
+export const useEffects = (): EffectsContextType => {
   const context = useContext(EffectsContext);
   if (context === undefined) {
     throw new Error('useEffects must be used within an EffectsProvider');

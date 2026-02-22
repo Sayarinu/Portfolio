@@ -46,7 +46,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
   );
 }
 
-export function useTheme(): ThemeContextType {
+export const useTheme = (): ThemeContextType => {
   const context = useContext(ThemeContext);
   if (context === undefined) {
     throw new Error('useTheme must be used within a ThemeProvider');

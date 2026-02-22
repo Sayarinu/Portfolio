@@ -1,12 +1,12 @@
 import { ContainerProps } from '../../types';
 import { cn } from '../../utils/cn';
 
-export function Container({
+export const Container = ({
   children,
   className,
   maxWidth = 'xl',
   centered = true,
-}: ContainerProps) {
+}: ContainerProps) => {
   const maxWidthStyles = {
     sm: 'max-w-screen-sm',
     md: 'max-w-screen-md',

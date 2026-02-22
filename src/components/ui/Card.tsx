@@ -1,13 +1,13 @@
 import { CardProps } from '../../types';
 import { cn } from '../../utils/cn';
 
-export function Card({
+export const Card = ({
   children,
   className,
   variant = 'default',
   title,
   hoverable = false,
-}: CardProps) {
+}: CardProps) => {
   const baseStyles = 'rounded-lg p-6 transition-all duration-200';
   
   const variantStyles = {
