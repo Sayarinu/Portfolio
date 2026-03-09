@@ -242,13 +242,13 @@ export function Home() {
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-16">
           {PROJECTS.map((project) => (
             <Card
               key={project.id}
               variant="retro"
               hoverable
-              className="min-h-[280px] flex flex-col justify-between"
+              className="h-[320px] flex flex-col justify-between"
               onClick={() => setSelectedProject(project)}
             >
               <div className="space-y-4">

@@ -5,8 +5,8 @@ export const PROJECTS: Project[] = [
     id: 'P01',
     title: 'DRAFT GAP',
     year: '2026',
-    description: 'Draft Gap is a full-stack ML product for forecasting professional League of Legends outcomes and surfacing betting-edge insights.',
-    longDescription: `Draft Gap is a full-stack ML product for forecasting professional League of Legends outcomes and surfacing betting-edge insights. It ingests historical match and player statistics from OraclesElixir, resolves teams/players/champions/leagues into canonical entities across sources, computes leakage-safe rolling features, and trains multiple models (Logistic Regression, XGBoost, MLP) with temporal validation.
+    description: 'Draft Gap is a full-stack ML product for forecasting professional League of Legends outcomes and surfacing betting-edge insights. These trades are simulated and investing strategy changes based on results.',
+    longDescription: `Draft Gap is a full-stack ML product for forecasting professional League of Legends outcomes and surfacing betting-edge insights. It ingests historical match and player statistics from OraclesElixir, resolves teams/players/champions/leagues into canonical entities across sources, computes leakage-safe rolling features, and trains multiple models with temporal validation.
 
 The backend exposes FastAPI endpoints for live and upcoming fixtures enriched with model odds, series-aware win probabilities (BO1/BO3/BO5), and bookmaker comparisons when cached odds are available. Celery + Redis handle asynchronous jobs for ingest, feature computation, retraining, roster sync, and periodic refresh.`,
     tags: [
