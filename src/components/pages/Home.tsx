@@ -119,7 +119,7 @@ export function Home() {
                   <Card
                     key={exp.id}
                     variant="retro"
-                    className="min-h-[280px] flex flex-col justify-between"
+                    className="h-[320px] flex flex-col justify-between"
                   >
                     <div className="space-y-4">
                       <div className="flex justify-between items-start">
@@ -175,7 +175,7 @@ export function Home() {
                   <Card
                     key={exp.id}
                     variant="retro"
-                    className="min-h-[280px] flex flex-col justify-between"
+                    className="h-[320px] flex flex-col justify-between"
                   >
                     <div className="space-y-4">
                       <div className="flex justify-between items-start">
