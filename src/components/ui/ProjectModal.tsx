@@ -72,12 +72,12 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
         </div>
 
         <div className="p-6 space-y-8">
-          <div className="relative overflow-hidden bg-black/5 dark:bg-white/5 aspect-video border-2 border-retro-border">
+          <div className="relative overflow-hidden bg-black/5 dark:bg-white/5 aspect-video border-2 border-retro-border flex items-center justify-center">
             {projectImages.length > 0 ? (
               <img
                 src={projectImages[currentImageIndex]}
                 alt={`${project.title} screenshot ${currentImageIndex + 1}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             ) : (
               <div className="absolute inset-0 flex items-center justify-center font-mono text-sm text-retro-text opacity-40">
@@ -149,26 +149,32 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
                 <div className="flex flex-col gap-2">
                   {project.links?.demo && (
                     <Button
-                      variant="retro"
+                      variant="secondary"
                       size="sm"
-                      className="w-full justify-center"
+                      className="w-full justify-center gap-1.5"
                       href={project.links.demo}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      LIVE DEMO
+                      View Project
+                      <svg className="w-3.5 h-3.5 shrink-0" aria-hidden fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
                     </Button>
                   )}
                   {project.links?.repo && (
                     <Button
                       variant="secondary"
                       size="sm"
-                      className="w-full justify-center"
+                      className="w-full justify-center gap-1.5"
                       href={project.links.repo}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      SOURCE CODE
+                      View GitHub
+                      <svg className="w-3.5 h-3.5 shrink-0" aria-hidden fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
                     </Button>
                   )}
                 </div>

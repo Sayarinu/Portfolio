@@ -140,14 +140,6 @@ export function Home() {
                       <p className="font-mono text-xs leading-relaxed opacity-80 line-clamp-4">
                         {exp.description}
                       </p>
-                      {exp.image && (
-                        <img
-                          src={exp.image}
-                          alt={`${exp.company} project preview`}
-                          className="w-full h-28 object-cover border border-retro-border/30"
-                          loading="lazy"
-                        />
-                      )}
                       {exp.link && (
                         <Link
                           href={exp.link}
@@ -204,14 +196,6 @@ export function Home() {
                       <p className="font-mono text-xs leading-relaxed opacity-80 line-clamp-4">
                         {exp.description}
                       </p>
-                      {exp.image && (
-                        <img
-                          src={exp.image}
-                          alt={`${exp.company} project preview`}
-                          className="w-full h-28 object-cover border border-retro-border/30"
-                          loading="lazy"
-                        />
-                      )}
                       {exp.link && (
                         <Link
                           href={exp.link}
@@ -291,9 +275,34 @@ export function Home() {
                     </span>
                   ))}
                 </div>
-                <button className="font-mono text-xs opacity-70 text-left underline underline-offset-4">
-                  OPEN PROJECT
-                </button>
+                <div className="flex flex-wrap gap-4 pt-2" onClick={(e) => e.stopPropagation()}>
+                  {project.links?.demo && (
+                    <a
+                      href={project.links.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-mono text-xs opacity-80 underline underline-offset-4 hover:opacity-100 inline-flex items-center gap-1.5 text-retro-accent dark:text-gold-accent"
+                    >
+                      View Project
+                      <svg className="w-3 h-3 shrink-0" aria-hidden fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  )}
+                  {project.links?.repo && (
+                    <a
+                      href={project.links.repo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-mono text-xs opacity-80 underline underline-offset-4 hover:opacity-100 inline-flex items-center gap-1.5 text-retro-accent dark:text-gold-accent"
+                    >
+                      View GitHub
+                      <svg className="w-3 h-3 shrink-0" aria-hidden fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  )}
+                </div>
               </div>
             </Card>
           ))}
