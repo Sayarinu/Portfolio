@@ -21,8 +21,8 @@ The backend exposes FastAPI endpoints for live and upcoming fixtures enriched wi
       'DOCKER'
     ],
     images: [
-      '/images/projects/draft-gap-1.png',
       '/images/projects/draft-gap-2.png',
+      '/images/projects/draft-gap-1.png',
       '/images/projects/draft-gap-3.png'
     ],
     links: {
