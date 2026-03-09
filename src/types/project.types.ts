@@ -5,6 +5,7 @@ export interface Project {
   description: string;
   longDescription: string;
   tags: string[];
+  images?: string[];
   links?: {
     demo?: string;
     repo?: string;

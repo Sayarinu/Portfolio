@@ -25,6 +25,7 @@ export interface CardProps extends BaseComponentProps {
   variant?: CardVariant;
   title?: string;
   hoverable?: boolean;
+  onClick?: () => void;
 }
 
 export interface ContainerProps extends BaseComponentProps {

@@ -41,7 +41,8 @@ export const EXPERIENCE: Experience[] = [
       'AWS',
       'GITHUB ACTIONS'
     ],
-    link: 'https://explore.joinkalo.com/'
+    link: 'https://explore.joinkalo.com/',
+    image: '/images/experience/kalo-1.png'
   },
   {
     id: 'C02',

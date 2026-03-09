@@ -9,4 +9,5 @@ export interface Experience {
   description: string;
   techStack: string[];
   link?: string;
+  image?: string;
 }

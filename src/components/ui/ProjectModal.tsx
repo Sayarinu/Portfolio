@@ -25,9 +25,15 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
     return () => window.removeEventListener("keydown", handleEsc);
   }, [onClose]);
 
+  useEffect(() => {
+    setCurrentImageIndex(0);
+  }, [project?.id, isOpen]);
+
   if (!isOpen || !project) return null;
 
-  const totalImages = project.imageCount || 3;
+  const projectImages = project.images ?? [];
+  const totalImages = projectImages.length || project.imageCount || 1;
+
   const nextImage = () =>
     setCurrentImageIndex((prev) => (prev + 1) % totalImages);
   const prevImage = () =>
@@ -67,9 +73,17 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
 
         <div className="p-6 space-y-8">
           <div className="relative overflow-hidden bg-black/5 dark:bg-white/5 aspect-video border-2 border-retro-border">
-            <div className="absolute inset-0 flex items-center justify-center font-mono text-sm text-retro-text opacity-40">
-              [ IMAGE SLIDESHOW: IMG_0{currentImageIndex + 1}.JPG ]
-            </div>
+            {projectImages.length > 0 ? (
+              <img
+                src={projectImages[currentImageIndex]}
+                alt={`${project.title} screenshot ${currentImageIndex + 1}`}
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <div className="absolute inset-0 flex items-center justify-center font-mono text-sm text-retro-text opacity-40">
+                [ IMAGE SLIDESHOW: IMG_0{currentImageIndex + 1}.JPG ]
+              </div>
+            )}
 
             <div className="absolute inset-0 flex items-center justify-between p-4">
               <button

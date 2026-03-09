@@ -7,6 +7,7 @@ import { cn } from "../../utils/cn";
 import { Project } from "../../types";
 import { useScrollTo } from "../../hooks/useScrollTo";
 import { EXPERIENCE } from "../../data/experience";
+import { PROJECTS } from "../../data/projects";
 import { Link } from "../ui/Link";
 
 export function Home() {
@@ -139,6 +140,14 @@ export function Home() {
                       <p className="font-mono text-xs leading-relaxed opacity-80 line-clamp-4">
                         {exp.description}
                       </p>
+                      {exp.image && (
+                        <img
+                          src={exp.image}
+                          alt={`${exp.company} project preview`}
+                          className="w-full h-28 object-cover border border-retro-border/30"
+                          loading="lazy"
+                        />
+                      )}
                       {exp.link && (
                         <Link
                           href={exp.link}
@@ -195,6 +204,14 @@ export function Home() {
                       <p className="font-mono text-xs leading-relaxed opacity-80 line-clamp-4">
                         {exp.description}
                       </p>
+                      {exp.image && (
+                        <img
+                          src={exp.image}
+                          alt={`${exp.company} project preview`}
+                          className="w-full h-28 object-cover border border-retro-border/30"
+                          loading="lazy"
+                        />
+                      )}
                       {exp.link && (
                         <Link
                           href={exp.link}
@@ -241,28 +258,46 @@ export function Home() {
           </span>
         </div>
 
-        <Card variant="retro" className="border-dashed">
-          <div className="py-20 flex flex-col items-center text-center space-y-8">
-            <div className="space-y-4">
-              <h3 className="font-retro text-3xl text-retro-accent dark:text-gold-accent">
-                COMING SOON
-              </h3>
-              <p className="font-mono text-base max-w-lg mx-auto opacity-70 leading-relaxed text-balance">
-                The project index is currently being synchronized and updated.
-                Full portfolio visualization will be available shortly.
-              </p>
-            </div>
-
-            <div className="flex gap-2">
-              {[1, 2, 3].map((i) => (
-                <div
-                  key={i}
-                  className="w-2 h-2 bg-retro-accent/20 dark:bg-gold-accent/20"
-                />
-              ))}
-            </div>
-          </div>
-        </Card>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {PROJECTS.map((project) => (
+            <Card
+              key={project.id}
+              variant="retro"
+              hoverable
+              className="min-h-[280px] flex flex-col justify-between"
+              onClick={() => setSelectedProject(project)}
+            >
+              <div className="space-y-4">
+                <div className="flex justify-between items-start">
+                  <h3 className="font-retro text-lg text-retro-text dark:text-gold-primary pr-2">
+                    {project.title}
+                  </h3>
+                  <span className="font-mono text-[10px] opacity-60 whitespace-nowrap pt-1">
+                    {project.year}
+                  </span>
+                </div>
+                <p className="font-mono text-xs leading-relaxed opacity-80 line-clamp-4">
+                  {project.description}
+                </p>
+              </div>
+              <div className="space-y-4 pt-6">
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.slice(0, 6).map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-[10px] font-mono px-1.5 py-0.5 border border-retro-border/30 rounded-sm opacity-60"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <button className="font-mono text-xs opacity-70 text-left underline underline-offset-4">
+                  OPEN PROJECT
+                </button>
+              </div>
+            </Card>
+          ))}
+        </div>
       </Section>
 
       <Section id="nouvelle-lune" className="pb-20" delay="0.4s">

@@ -7,6 +7,7 @@ export const Card = ({
   variant = 'default',
   title,
   hoverable = false,
+  onClick,
 }: CardProps) => {
   const baseStyles = 'rounded-lg p-6 transition-all duration-200';
   
@@ -21,7 +22,10 @@ export const Card = ({
     : '';
   
   return (
-    <div className={cn(baseStyles, variantStyles[variant], hoverStyles, className)}>
+    <div
+      className={cn(baseStyles, variantStyles[variant], hoverStyles, className)}
+      onClick={onClick}
+    >
       {title && (
         <h3 className="font-retro text-lg mb-4 text-shadow-retro dark:text-glow-gold">
           {title}
