@@ -10,7 +10,7 @@ export const PROJECTS: Project[] = [
 
 The backend exposes FastAPI endpoints for live and upcoming fixtures enriched with model odds, series-aware win probabilities (BO1/BO3/BO5), and bookmaker comparisons when cached odds are available. Celery + Redis handle asynchronous jobs for ingest, feature computation, retraining, roster sync, and periodic refresh.`,
     tags: [
-      'NEXT.JS',
+      'REACT',
       'FASTAPI',
       'POSTGRESQL',
       'REDIS',
